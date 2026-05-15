@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-baseURL: "https://full-stack-habit-tracker-fd2t.onrender.com/api"
-
+baseURL: import.meta.env.VITE_API_URL
 })
 
 export default API;
