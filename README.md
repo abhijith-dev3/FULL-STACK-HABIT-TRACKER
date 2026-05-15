@@ -4,10 +4,6 @@ A full-stack web application to track daily habits, built using **MERN stack (Mo
 
 ---
 
-## 🌍 Live Links
-
-- 🔵 Frontend: https://full-stack-habit-tracker.vercel.app  
-- 🟢 Backend API: https://full-stack-habit-tracker-fd2t.onrender.com  
 
 ---
 
