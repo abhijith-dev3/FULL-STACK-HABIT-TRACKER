@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import API from "../api/axios";
 import { getToken } from "../utils/auth";
-const user = JSON.parse(localStorage.getItem("user") || "null");
 
 export default function Dashboard() {
   const [habits, setHabits] = useState([]);
   const [newHabit, setNewHabit] = useState("");
+
+  const user = JSON.parse(localStorage.getItem("user") || "null");
 
   // 🔥 FETCH HABITS ON LOAD
   useEffect(() => {
