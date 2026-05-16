@@ -1,8 +1,11 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom"
 
 import API from "../api/axios";
 
 export default function Login(){
+
+  const navigate = useNavigate();
  
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
@@ -17,7 +20,7 @@ export default function Login(){
       localStorage.setItem("token",res.data.token);
       localStorage.setItem("user",JSON.stringify(res.data.user));
 
-      window.location.href="/dashboard"
+      navigate("/dashboard")
     }catch(error){
       console.error(error.response?.data||error.message)
       alert("Invalid credentials")

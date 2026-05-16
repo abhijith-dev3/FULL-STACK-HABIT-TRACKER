@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import Protected from "../routes/Protected";
 
-import { isLoggedIn } from "./utils/auth";
 
 export default function App(){
   return (
@@ -15,7 +15,9 @@ export default function App(){
       <Route path="/" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
-      <Route path="/dashboard" element={ isLoggedIn() ? <Dashboard/> :<Login/>}/>
+      <Route path="/dashboard" element={<Protected>
+        <Dashboard/>
+      </Protected>} />
     </Routes>
     </BrowserRouter>
   )
