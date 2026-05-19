@@ -41,7 +41,7 @@ export default function Register() {
     <div className="h-screen flex items-center justify-center bg-gray-950 text-white">
       <div className="bg-gray-900 p-8 rounded-xl w-96">
 
-        <h2 className="text-2xl text-green-400 mb-4">Register</h2>
+        <h2 className="text-2xl text-green-400 mb-4 font-semibold uppercase">register</h2>
 
         <input
           className="w-full p-2 mb-3 bg-gray-800"
