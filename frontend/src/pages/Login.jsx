@@ -12,7 +12,7 @@ export default function Login(){
   const [loading,setLoading] = useState(false);
 
   const handleLogin = async() => {
-    setLoading(false)
+    setLoading(true)
     try{
       const res= await API.post("/auth/login",{
         email,
