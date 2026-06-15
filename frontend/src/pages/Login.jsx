@@ -9,8 +9,10 @@ export default function Login(){
  
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+  const [loading,setLoading] = useState(false);
 
   const handleLogin = async() => {
+    setLoading(false)
     try{
       const res= await API.post("/auth/login",{
         email,
@@ -24,6 +26,8 @@ export default function Login(){
     }catch(error){
       console.error(error.response?.data||error.message)
       alert("Invalid credentials")
+    }finally{
+      setLoading(false)
     }
   }
   return(
@@ -42,8 +46,9 @@ export default function Login(){
         onChange={(e) => setPassword(e.target.value)}/>
 
         <button onClick={handleLogin}
+        disabled={loading}
         className="w-full bg-green-500 rounded p-2 cursor-pointer">
-          Login
+          {loading ? "singing In" : "Login"}
         </button>
       </div>
     </div>

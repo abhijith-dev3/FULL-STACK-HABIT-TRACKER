@@ -8,8 +8,10 @@ export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading,setLoading] = useState(false)
 
   const handleRegister = async () => {
+    setLoading(true)
     try {
         await API.post("/auth/register", {
         name,
@@ -34,6 +36,8 @@ export default function Register() {
     } catch (err) {
       console.log(err.response?.data);
       alert("Error registering user");
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -64,9 +68,10 @@ export default function Register() {
 
         <button
           onClick={handleRegister}
+          disabled={loading}
           className="w-full bg-green-500 p-2 rounded"
         >
-          Register
+          {loading ? "registering..." : "Register"}
         </button>
 
       </div>
